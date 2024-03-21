@@ -1,0 +1,13 @@
+clc
+clear all;
+f=input('enter the frequency for which bystersis and eddy current loss has to be determind :=');
+f1=input('enter the value of frequency f1=');
+pi1=input('enter the value of core losses pi1=');
+f2=input('enter the value of frequency f2=');
+pi2=input('enter the value of core losses pi2=');
+a=[f1,f1^2:f2,f^2];
+b=[pi1;pi2];
+x=inv(a)*b;
+p=f*x;
+printf('hystersis and eddy current losses in watts=\n');
+disp(p);

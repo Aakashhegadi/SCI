@@ -1,0 +1,13 @@
+clc 
+clear all
+printf('parallel operation of two transformers');
+Q=input('enter load kva rating= ');
+Q1=input('enter first transformer kva rating = ');
+Z1=input('enter the value of first transformer impedence = ');
+Q2=input('enter second  transformer kva rating = ');
+Z2=input('enter the value of second transformer impedence = ');
+printf('load shared by transformer = \n);
+Q1=Q*(Z2)/(Z1+Z2);
+disp(Q1);
+Q2=Q*(Z1)/(Z1+Z2);
+disp(Q2);

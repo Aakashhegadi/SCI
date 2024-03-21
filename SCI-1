@@ -1,0 +1,24 @@
+clc 
+clear all
+Q=input('transformer in kva rating = ')
+V0=input('open circuit voltage = ')
+I0=input('open circuit current = ')
+W0=input('open circuit wattmeter reading = ')
+Vsc=input('short circuit voltage = ')
+Isc=input('short circuit current = ')
+Wsc=input('short circuit wattmeter reading = ')
+pf=W0/V0*I0
+Iw=I0*pf
+Im=sqrt(I0^2-IW^2)
+R0=V0/Iw
+X0=V0/Im
+disp(R0)
+disp(X0)
+R01=Wsc/Isc^2
+Z01=Vsc/Isc
+X01=sqrt(Z01^2-R01^2)
+disp(R01)
+disp(Z01)
+disp(X01)
+eff=(Q*x*cos*10^3)/((Q*x*cos*10^3)+W+(X^2)*Wsc)*100
+plot(X,eff,'r')

@@ -1,0 +1,13 @@
+clc  
+clear all
+V=input('phase voltage in volts = ');
+I=input('armature current in amps = ');
+R=input('armature  reactance in ohm = ');
+Xq=input('quadrature axis  reactance = ');
+Xd=input('direct axis reactance = ');
+phi=36.86;
+theta=atan(V*sin(phi)+I*Xq)/(V*sin(phi)+I*R);
+delta=theta-phi;
+E=V*cos(delta)+I*R*cos(theta)+I*Xd*sin(theta);
+regulation=((E-V)/V)*100;
+disp(regulation)

@@ -1,0 +1,10 @@
+clc 
+clear all
+delta=1:180
+Xd=1.27
+Xq=0.95
+Vbus=01.0
+Veq=Vbus
+ef=1.0
+pa=(ef*Veq/Xd)*sind(delta)+Veq*2*(Xd-Xq)/2*Xd*sind(2*delta)
+plot(delta,pa,'r')

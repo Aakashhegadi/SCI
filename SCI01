@@ -1,0 +1,36 @@
+clc 
+clear all
+Q=input('transformer in kva rating = ')
+V0=input('open circuit voltage = ')
+I0=input('open circuit current = ')
+W0=input('open circuit wattmeter reading = ')
+Vsc=input('short circuit voltage = ')
+Isc=input('short circuit current = ')
+Wsc=input('short circuit wattmeter reading = ')
+pf=W0/V0*I0
+Iw=I0*pf
+Im=sqrt(I0^2-IW^2)
+R0=V0/Iw
+X0=V0/Im
+disp(R0)
+disp(X0)
+R01=Wsc/Isc^2
+Z01=Vsc/Isc
+X01=sqrt(Z01^2-R01^2)
+disp(R01)
+disp(Z01)
+disp(X01)
+eff=(Q*x*cos*10^3)/((Q*x*cos*10^3)+W+(X^2)*Wsc)*100
+plot(X,eff,'r')end
+I=(Q*1000)/230
+for cos1=0:0.2:1
+sin1=acos(sin1)
+regulation=(I*R01*cos1+I*X01*sin1)/230
+printf('\ regulation is = %at pf of %f',regulation,cos1)
+disp(regulation)
+end
+for cos2=0:0.2:1
+sin2=acos(sin2)
+regulation=(I*R01*cos2-I*X01*sin2)/230
+printf('\ regulation is = %at pf of %f',regulation,cos2)
+end
